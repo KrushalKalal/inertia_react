@@ -13,11 +13,20 @@ const Home = ({ posts }) => {
                     <tr>
                         <th>no</th>
                         <th>content</th>
+                        <th>show</th>
                     </tr>
                     {posts.data.map((post) => (
                         <tr>
                             <td>{post.id}</td>
                             <td>{post.body}</td>
+                            <td>
+                                <Link
+                                    href={`/posts/${post.id}`}
+                                    className="text-link"
+                                >
+                                    Show
+                                </Link>
+                            </td>
                         </tr>
                     ))}
                 </table>
