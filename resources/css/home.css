@@ -1,0 +1,17 @@
+.custom-class {
+    padding: 0.25rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    color: #cbd5e1;
+  }
+
+  .dynamic-class {
+  padding: 0.25rem; 
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.dynamic-class-active {
+  color: #3b82f6;
+  font-weight: bold; 
+}
