@@ -1,4 +1,4 @@
-import { useForm, Head, usePage } from "@inertiajs/react";
+import { useForm, Head, usePage, Link } from "@inertiajs/react";
 import React from "react";
 
 const Show = ({ post }) => {
@@ -26,6 +26,7 @@ const Show = ({ post }) => {
                             Delete
                         </button>
                     </form>
+                    <Link href={`/posts/${post.id}/edit`}>Update</Link>
                 </div>
             </div>
         </>
