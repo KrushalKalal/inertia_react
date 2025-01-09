@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../Layouts/Layout";
-import { Link, usePage } from "@inertiajs/react";
+import { Link, usePage, Head } from "@inertiajs/react";
 import "../../css/home.css";
 
 const Home = ({ posts }) => {
@@ -8,6 +8,7 @@ const Home = ({ posts }) => {
     //console.log(usePage());
 
     const { flash } = usePage().props;
+    const { component } = usePage();
 
     const [flashMsg, setFlash] = useState(flash.message);
 
@@ -17,6 +18,13 @@ const Home = ({ posts }) => {
 
     return (
         <>
+            <Head title={component}>
+                <meta
+                    head-key="description"
+                    name="description"
+                    content="This is the default description"
+                />
+            </Head>
             <div className="title">Hello</div>
             {flashMsg && <div>{flashMsg}</div>}
             <div>

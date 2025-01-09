@@ -1,8 +1,9 @@
-import { useForm } from "@inertiajs/react";
+import { useForm, Head, usePage } from "@inertiajs/react";
 import React from "react";
 
 const Show = ({ post }) => {
     const { delete: destroy } = useForm();
+    const { component } = usePage();
 
     function Submit(e) {
         e.preventDefault();
@@ -10,6 +11,7 @@ const Show = ({ post }) => {
     }
     return (
         <>
+            <Head title={component} />
             <div className="p-4 border-b">
                 <div className="text-sm text-slate-600">
                     <span>Posted On:</span>

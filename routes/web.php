@@ -16,9 +16,9 @@ Route::get('/',[PostController::class,'index']);
 
 Route::resource('posts',PostController::class)->except('index');
 
-// Route::get('/about',function(){
-//     return inertia('About/About');
-// });
+ Route::get('/about',function(){
+    return inertia('About/About');
+ });
 
 
 
