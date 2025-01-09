@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../Layouts/Layout";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import "../../css/home.css";
 
 const Home = ({ posts }) => {
     console.log(posts);
+    //console.log(usePage());
+
+    const { flash } = usePage().props;
+
+    const [flashMsg, setFlash] = useState(flash.message);
+
+    setTimeout(() => {
+        setFlash(null);
+    }, 2000);
+
     return (
         <>
             <div className="title">Hello</div>
+            {flashMsg && <div>{flashMsg}</div>}
             <div>
                 <table>
                     <tr>

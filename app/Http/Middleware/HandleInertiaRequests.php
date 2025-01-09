@@ -29,14 +29,17 @@ class HandleInertiaRequests extends Middleware
     /**
      * Define the props that are shared by default.
      *
-     * @see https://inertiajs.com/shared-data
+     * @see https://inertiajs.com/shared-data   
      *
      * @return array<string, mixed>
      */
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            //
+              //'name' => ''krish', // usePage() with this hook you can use it anywhere
+                'flash' => [
+                'message' => fn () => $request->session()->get('message')
+            ],  
         ]);
     }
 }
